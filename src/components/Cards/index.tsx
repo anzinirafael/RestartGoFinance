@@ -13,13 +13,13 @@ interface PropsCard {
     title: string,
     amount: string,
     lastTransaction: string,
-};
+}
 
 const icon = {
     up: "arrow-up-circle",
     down: "arrow-down-circle",
     total: "dollar-sign"
-};
+}
 
 export function Cards({type, title, amount, lastTransaction} : PropsCard){
     return(

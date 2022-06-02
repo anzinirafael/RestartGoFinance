@@ -74,7 +74,7 @@ export const HighLightCards = styled.ScrollView`
 
 export const Transactions = styled.View`
     flex: 1%;
-    padding: ${RFValue(24)}px ${RFValue(16)}px;
+    margin: ${RFValue(24)}px ${RFValue(24)}px;
     margin-top: ${RFPercentage(10)}px;
 `;
 
@@ -83,7 +83,5 @@ export const Title =  styled.Text`
     font-size: ${RFValue(18)}px;
     color: ${({theme}) => theme.colors.title};
     font-family: ${({theme}) => theme.fonts.regular};
-    margin-bottom: ${RFValue(16)}px;
+    margin-bottom: ${RFValue(12)}px;
 `;
-
-export const TransactionsList = styled.FlatList``

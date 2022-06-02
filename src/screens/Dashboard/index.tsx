@@ -1,5 +1,6 @@
 //Importação do React
 import React from 'react';
+import { FlatList } from 'react-native-gesture-handler';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { Cards } from '../../components/Cards';
 import { CardsList, DataProps } from '../../components/CardsList';
@@ -18,7 +19,6 @@ import {
     HighLightCards,
     Transactions,
     Title,
-    TransactionsList
 }from './styles';
 
 export interface DataIdProps extends DataProps{
@@ -94,8 +94,8 @@ export function Dashboard(){
                 />
             </HighLightCards>
             <Transactions>
-                <Title>Listagem</Title>
-                <TransactionsList 
+                <Title>Transações</Title>
+                <FlatList 
                     data={data}
                     keyExtractor={item => item.id}
                     renderItem={({item}) => <CardsList data={item} /> }

@@ -13,7 +13,7 @@ export const Container = styled.View<TypeProps>`
     margin-right: ${({type}) => type === 'total' ? 0 : 16}px;
     padding: ${RFValue(20)}px ${RFValue(24)}px;
     border-radius: ${RFValue(5)}px;
-    padding-bottom: ${RFValue(42)}px;
+    padding-bottom: ${RFValue(28)}px;
 
 `;
 

@@ -11,6 +11,7 @@ export const Container = styled.View`
     padding: ${RFValue(18)}px ${RFValue(24)}px;
     background-color: ${({theme}) => theme.colors.shape};
     border-radius: ${RFValue(5)}px;
+    margin-bottom: ${RFValue(16)}px;
 `;
 
 export const Header = styled.View`
