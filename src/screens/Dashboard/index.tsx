@@ -1,6 +1,8 @@
 //Importação do React
 import React from 'react';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 import { Cards } from '../../components/Cards';
+import { CardsList, DataProps } from '../../components/CardsList';
 //Importação dos componentes criados dentro da folha de estilo
 import { 
     Container,
@@ -13,10 +15,41 @@ import {
     UserName,
     Button,
     IconPower,
-    HighLightCards
+    HighLightCards,
+    Transactions,
+    Title,
+    TransactionsList
 }from './styles';
+
+export interface DataIdProps extends DataProps{
+    id: string;
+}
 //Exportação da página de dashboard
 export function Dashboard(){
+    const data: DataIdProps[] = [{
+        id: '1',
+        title:"Desenvolvimento de site",
+        amount:"12.000,00",
+        category:{icon: 'dollar-sign', name: 'Vendas'},
+        date : "13/04/2020",
+        type: "positive"
+    },
+    {
+        id: '2',
+        title:"Hamburgueria Pizzy",
+        amount:"59,00",
+        category:{icon: 'coffee', name: 'Alimentação'},
+        date : "10/04/2020",
+        type: "negative"
+    },
+    {
+        id: '3',
+        title:"Aluguel do apartamento",
+        amount:"1.200,00",
+        category:{icon: 'shopping-bag', name: 'Casa'},
+        date : "10/04/2020",
+        type: "negative"
+    }]
     //Retorno da função, será rederizado dentro da página
     return(
         //Componente Container para o agrupamento de componentes
@@ -60,6 +93,16 @@ export function Dashboard(){
                     lastTransaction="01 à 16 de abril"
                 />
             </HighLightCards>
+            <Transactions>
+                <Title>Listagem</Title>
+                <TransactionsList 
+                    data={data}
+                    keyExtractor={item => item.id}
+                    renderItem={({item}) => <CardsList data={item} /> }
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={{paddingBottom: getBottomSpace()}}
+                />
+            </Transactions>
         </Container>
     );
 };

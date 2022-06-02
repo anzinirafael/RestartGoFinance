@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
-import { BorderlessButton } from 'react-native-gesture-handler';
 import {Feather} from '@expo/vector-icons';
 import { RFValue, RFPercentage } from 'react-native-responsive-fontsize';
 //Criação de componentes individuais com estilização em CSS in Js
@@ -17,7 +16,7 @@ export const Header = styled.View`
 
 export const UserContainer = styled.View`
     width: 100%;
-    margin-top: ${getStatusBarHeight() + RFValue(24)}px;
+    margin-top: ${getStatusBarHeight() + RFValue(28)}px;
     margin-bottom: ${RFValue(24)}px;
     padding-left: ${RFValue(24)}px;
     padding-right: ${RFValue(24)}px;
@@ -49,26 +48,42 @@ export const Hello = styled.Text`
     color: ${({theme}) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
     line-height: ${RFValue(20)}px;
-`
+`;
 
 export const UserName = styled.Text`
     font-family: ${({theme}) => theme.fonts.bold};
     color: ${({theme}) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
     line-height: ${RFValue(20)}px;
-`
+`;
 
 export const Button = styled.TouchableOpacity`
 
-`
+`;
 
 export const IconPower = styled(Feather)`
     font-size: ${(RFValue(24))}px;
     color: ${({theme}) => theme.colors.secondary};
-`
+`;
 
 export const HighLightCards = styled.ScrollView`    
     width: 100%;
     position: absolute;
     margin-top: ${RFPercentage(20)}px;
-`
+`;
+
+export const Transactions = styled.View`
+    flex: 1%;
+    padding: ${RFValue(24)}px ${RFValue(16)}px;
+    margin-top: ${RFPercentage(10)}px;
+`;
+
+
+export const Title =  styled.Text`
+    font-size: ${RFValue(18)}px;
+    color: ${({theme}) => theme.colors.title};
+    font-family: ${({theme}) => theme.fonts.regular};
+    margin-bottom: ${RFValue(16)}px;
+`;
+
+export const TransactionsList = styled.FlatList``
